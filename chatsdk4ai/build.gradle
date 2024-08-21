@@ -47,6 +47,17 @@ android {
     }
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)        // << --- ADD This
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17            // << --- ADD This
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.8.0'
@@ -64,4 +75,25 @@ dependencies {
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
     debugImplementation 'androidx.compose.ui:ui-tooling'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
+}
+
+afterEvaluate {
+
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = 'com.aichat.chatsdk'
+                artifactId = '4aichatsdk'
+                version = '1.0.0'
+                pom {
+                    description = 'First release'
+                }
+            }
+        }
+        repositories {
+            mavenLocal()
+        }
+    }
 }
