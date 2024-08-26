@@ -1,6 +1,7 @@
 package com.aichat.chatsdk
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.webkit.WebChromeClient
 import android.webkit.WebView
@@ -16,9 +17,20 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
 
 class ChatActivity : ComponentActivity() {
+
+    companion object{
+        const val SITE_ID = "site_id"
+        fun start(context: Context, message: String) {
+            val intent = Intent(context, ChatActivity::class.java)
+            intent.putExtra(SITE_ID, message)
+            context.startActivity(intent)
+        }
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val siteId = intent.getStringExtra("siteId")
+        val siteId = intent.getStringExtra(SITE_ID)
 
         setContent {
             MaterialTheme {
@@ -50,10 +62,10 @@ fun WebViewScreen(siteId: String?) {
                 }
                 webChromeClient = WebChromeClient()
                 settings.javaScriptEnabled = true
-                settings.loadWithOverviewMode = true
-                settings.useWideViewPort = true
-                settings.builtInZoomControls = true
-                settings.displayZoomControls = false
+//                settings.loadWithOverviewMode = true
+//                settings.useWideViewPort = true
+//                settings.builtInZoomControls = true
+//                settings.displayZoomControls = false
             }
         },
         update = { webView ->

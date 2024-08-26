@@ -17,9 +17,9 @@ import com.aichatsdk.ui.theme._4aiChatSdkTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val intent = Intent(this, ChatActivity::class.java)
-        intent.putExtra("siteId","NEFJQ0hBVEtFWTEw")
-        startActivity(intent)
+
+        ChatActivity.start(this, "id")
+
         setContent {
             _4aiChatSdkTheme {
                 // A surface container using the 'background' color from the theme
@@ -27,7 +27,6 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
                 }
             }
         }
