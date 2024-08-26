@@ -48,7 +48,7 @@ class ChatActivity : ComponentActivity() {
 @Composable
 fun WebViewScreen(siteId: String?) {
     val context = LocalContext.current
-    var htmlContent = loadAndModifyHtml(context, "embedchat.html", "NEFJQ0hBVEtFWTEw")
+    var htmlContent = loadAndModifyHtml(context, "embedchat.html", siteId.toString())
 
 
 

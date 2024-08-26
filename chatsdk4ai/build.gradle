@@ -79,7 +79,7 @@ afterEvaluate {
 
                 groupId = 'com.aichat.chatsdk'
                 artifactId = '4aichatsdk'
-                version = '1.0.1'
+                version = '1.0.10'
                 pom {
                     description = 'First release'
                 }
