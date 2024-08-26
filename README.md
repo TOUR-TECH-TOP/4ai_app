@@ -47,16 +47,15 @@ dependencies {
 ### Usage
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
+    
         super.onCreate(savedInstanceState)
 
         setContent {
-            TestAIChatTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    ChatActivity.start(this,"YOUR_SITE_ID")
-                }
-            }
+
+        ChatActivity.start(this,"YOUR_SITE_ID")
+
         }
     }
 }
