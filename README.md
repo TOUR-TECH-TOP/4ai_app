@@ -24,13 +24,16 @@ repositories {
 For gradle above 8, add the following code in settings.gradle
 
 dependencyResolutionManagement {
+
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    
     repositories {
         google()
         mavenCentral()
         maven { url 'https://jitpack.io' }
 
     }
+    
 }
 
 Add this dependency in app level build.gradle
