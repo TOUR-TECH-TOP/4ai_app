@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        ChatActivity.start(this, "id")
+        ChatActivity.start(this, "REPLACE_WITH_UR_SITE_ID")
 
         setContent {
             _4aiChatSdkTheme {
