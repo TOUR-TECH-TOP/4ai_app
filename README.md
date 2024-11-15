@@ -41,7 +41,7 @@ Add this dependency in app level build.gradle
 
 dependencies {
     
-    implementation 'com.github.TOUR-TECH-TOP:4ai_app:v1.0.11'
+    implementation 'com.github.TOUR-TECH-TOP:4ai_app:v1.0.12'
 }
 
 ### Usage
